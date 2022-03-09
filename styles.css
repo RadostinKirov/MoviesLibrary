@@ -110,6 +110,7 @@ main .movie-image img:hover {
 
 main .search-page{
     margin: 0 50px;
+    padding-bottom: 30px;
 }
 
 main .search-page h2{
@@ -161,7 +162,7 @@ main .search-page .img-container img {
 main .search-page .movie-info {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: flex-start;
     width: 80%;
     padding: 0 20px;
@@ -176,16 +177,16 @@ main .search-page .movie-title{
     display: block;
 }
 
-main .duration , main .genre {
+main .search-page .duration , main .genre {
     display: inline-block;
 }
 
-main .genre {
+main .search-page .genre {
     border-right: 1px solid black;
     padding-right: 8px;
 }
 
-main .official-site {
+main .search-page .official-site {
     display: block;
 }
 
@@ -226,3 +227,95 @@ main .search-page .remove-from-favorites:hover {
     transition: 0.3s;
     cursor: pointer;
 }
+
+main .details-page {
+    margin: 0 50px;
+    padding-bottom: 30px;
+}
+
+main .details-page .movie {
+    display: flex;
+    padding: 10px 0;
+}
+
+
+main .details-page .img-container {
+    width: 220px;
+}
+
+main .details-page .img-container img {
+    width: 100%;
+}
+
+main .details-page .movie-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 80%;
+    padding: 0 20px;
+    margin: 15px 0;
+}
+
+main .details-page .movie-title{
+    text-decoration: none;
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+    display: block;
+}
+
+main .details-page .duration , main .genre {
+    display: inline-block;
+}
+
+main .details-page .genre {
+    border-right: 1px solid black;
+    padding-right: 8px;
+}
+
+main .details-page .official-site {
+    display: block;
+}
+
+main .details-page .add-to-favorites {
+    background: none;
+    border: 1px solid rgb(51, 166, 76);
+    color: rgb(51, 166, 76);
+    border-radius: 5px;
+    padding: 10px 41px;
+    font-size: 18px;
+    border-radius: 7px;
+}
+
+main .details-page .add-to-favorites:hover{
+    background-color: rgb(51, 166, 76);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+main .details-page .remove-from-favorites {
+    background: none;
+    border: 1px solid rgb(204, 0, 0);
+    color: rgb(204, 0, 0);
+    border-radius: 5px;
+    padding: 10px 41px;
+    font-size: 18px;
+    border-radius: 7px;
+}
+
+main .details-page .remove-from-favorites:hover {
+    background-color: rgb(204, 0, 0);
+    color: white;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+main .details-page textarea {
+    border: 1px solid rgb(206, 212, 218);
+    border-radius: 5px;
+    padding-top: 12px;
+    padding-left: 9px;
+}
+
