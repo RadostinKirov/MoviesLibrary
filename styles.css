@@ -77,3 +77,29 @@ header .hero button:hover {
     transition: 0.3s;
     cursor: pointer;
 }
+
+main .favorites {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    border-top: 2px solid rgb(102, 102, 102);
+    border-bottom: 2px solid rgb(102, 102, 102);
+    padding-bottom: 30px;
+}
+
+main .favorites h2 {
+    width: 100%;
+    text-align: center;
+    padding: 30px;
+    margin: 0;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+main .movie-image{
+width: 220px;
+}
+
+main .movie-image img {
+    width: 100%;
+}
