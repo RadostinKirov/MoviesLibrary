@@ -29,6 +29,12 @@ header .search-bar button {
     padding: 10px;
 }
 
+header .search-bar button:hover {
+    background-color: rgb(51, 166, 76);
+    color: white;
+    transition: 0.4s;
+}
+
 header .my-collection {
     align-self: center;
 }
