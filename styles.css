@@ -17,8 +17,8 @@ header .search-bar input{
     border-radius: 5px;
     padding: 10px;
     color: rgb(108, 118, 125);
-    width: 200px;
-    margin-right: 20px;
+    width: 280px;
+    margin-right: 5px;
 }
 
 header .search-bar button {
@@ -40,7 +40,7 @@ header .my-collection {
     align-self: center;
 }
 
-header .hero {
+main .hero {
     background:linear-gradient(0deg, rgba(0,0,0, 0.4), rgba(0,0,0, 0.4)), url('./hero\ background.jpg');
     height: 300px;
     padding: 0 40px;
@@ -50,20 +50,20 @@ header .hero {
     justify-content: center;
 }
 
-header .hero p {
+main .hero p {
     width: 40%;
     color: white;
     text-shadow: -1px -1px 2px black;
     letter-spacing: 0.5px;
 }
 
-header .hero h1 {
+main .hero h1 {
     margin: 0;
     color: white;
     text-shadow: -1px -1px 2px black;
 }
 
-header .hero button {
+main .hero button {
     background-color: rgb(0,87,216);
     color: white;
     padding: 10px 25px;
@@ -71,7 +71,7 @@ header .hero button {
     letter-spacing: 0.5px;
 }
 
-header .hero button:hover {
+main .hero button:hover {
     background-color: white;
     color: rgb(0,87,216);
     transition: 0.3s;
@@ -102,4 +102,125 @@ width: 220px;
 
 main .movie-image img {
     width: 100%;
+}
+
+main .movie-image img:hover {
+    cursor: pointer;
+}
+
+main .search-page{
+    margin: 0 50px;
+}
+
+main .search-page h2{
+    text-align: center;
+}
+
+main .search-page .search-bar {
+    text-align: center;
+}
+
+main .search-page .search-bar input{
+    border: 1px solid rgb(206, 212, 218);
+    border-radius: 5px;
+    padding: 10px;
+    color: rgb(108, 118, 125);
+    width: 280px;
+    margin-right: 5px;
+}
+
+main .search-page .search-bar button {
+    border: 1px solid rgb(51, 166, 76);
+    background-color: rgb(248, 249, 250);
+    color: rgb(51, 166, 76);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+main .search-page .search-bar button:hover {
+    background-color: rgb(51, 166, 76);
+    color: white;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+main .search-page .movie {
+    display: flex;
+    padding: 10px 0;
+}
+
+
+main .search-page .img-container {
+    width: 220px;
+}
+
+main .search-page .img-container img {
+    width: 100%;
+}
+
+main .search-page .movie-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 80%;
+    padding: 0 20px;
+    margin: 15px 0;
+}
+
+main .search-page .movie-title{
+    text-decoration: none;
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+    display: block;
+}
+
+main .duration , main .genre {
+    display: inline-block;
+}
+
+main .genre {
+    border-right: 1px solid black;
+    padding-right: 8px;
+}
+
+main .official-site {
+    display: block;
+}
+
+main .search-page .add-to-favorites {
+    background: none;
+    border: 1px solid rgb(51, 166, 76);
+    color: rgb(51, 166, 76);
+    border-radius: 5px;
+    padding: 10px 41px;
+    font-size: 18px;
+}
+
+main .search-page .add-to-favorites:hover{
+    background-color: rgb(51, 166, 76);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+main .search-page button {
+    margin-top: 15px;
+}
+
+main .search-page .remove-from-favorites {
+    background: none;
+    border: 1px solid rgb(204, 0, 0);
+    color: rgb(204, 0, 0);
+    border-radius: 5px;
+    padding: 10px 41px;
+    font-size: 18px;
+}
+
+main .search-page .remove-from-favorites:hover {
+    background-color: rgb(204, 0, 0);
+    color: white;
+    transition: 0.3s;
+    cursor: pointer;
 }
