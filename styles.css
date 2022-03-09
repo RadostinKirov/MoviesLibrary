@@ -196,6 +196,7 @@ main .search-page .add-to-favorites {
     border-radius: 5px;
     padding: 10px 41px;
     font-size: 18px;
+    border-radius: 7px;
 }
 
 main .search-page .add-to-favorites:hover{
@@ -216,6 +217,7 @@ main .search-page .remove-from-favorites {
     border-radius: 5px;
     padding: 10px 41px;
     font-size: 18px;
+    border-radius: 7px;
 }
 
 main .search-page .remove-from-favorites:hover {
