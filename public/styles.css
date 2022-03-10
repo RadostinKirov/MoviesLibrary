@@ -41,7 +41,7 @@ header .my-collection {
 }
 
 main .hero {
-    background:linear-gradient(0deg, rgba(0,0,0, 0.4), rgba(0,0,0, 0.4)), url('./hero\ background.jpg');
+    background:linear-gradient(0deg, rgba(0,0,0, 0.4), rgba(0,0,0, 0.4)), url('./images/hero background.jpg');
     height: 300px;
     padding: 0 40px;
     display: flex;
