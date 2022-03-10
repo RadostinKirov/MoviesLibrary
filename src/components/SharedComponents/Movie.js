@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 
 const Movie = () => {
 
@@ -6,11 +6,11 @@ const Movie = () => {
     return (
         <section className="movie">
 
-        <a href="#" className="img-container">
+        <Link to="/details" className="img-container">
           <img src="https://m.media-amazon.com/images/I/516DXKVRKKL.jpg" alt="The Pink Panther" />
-        </a>
+        </Link>
         <div className="movie-info">
-          <a href="#" className="movie-title">Movie Title (2009)</a>
+          <Link to="#" className="movie-title">Movie Title (2009)</Link>
           <div>
             <p className="genre">Drama, Thriller, Comedy</p>
             <p className="duration">90minutes</p>
@@ -18,7 +18,7 @@ const Movie = () => {
           <p className="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et recusandae
             beatae esse cupiditate, quae aspernatur aliquam provident similique quas. Vitae quos nihil
             pariatur magnam perspiciatis numquam doloribus voluptate, error saepe?</p>
-          <a href="#" className="official-site">Visit official site</a>
+          <Link to="#" className="official-site">Visit official site</Link>
           <button className="add-to-favorites">Add to Favorites</button>
         </div>
       </section>
