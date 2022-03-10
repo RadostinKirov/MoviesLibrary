@@ -36,8 +36,10 @@ header .search-bar button:hover {
     cursor: pointer;
 }
 
-header .my-collection {
+header  a {
     align-self: center;
+    text-decoration: none;
+    color: black;
 }
 
 main .hero {
