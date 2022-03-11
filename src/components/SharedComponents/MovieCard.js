@@ -19,7 +19,7 @@ const MovieCard = ({ movieInfo }) => {
                 </div>
                 {movieInfo.summary}
                 <a href={movieInfo.url}>Visit official site</a>
-               
+
                 <Link to="" className="add-to-favorites"> Add to Favorites</Link>
 
 

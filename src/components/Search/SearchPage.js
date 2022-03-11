@@ -1,15 +1,11 @@
 import MovieCard from "../SharedComponents/MovieCard";
 import SearchBar from "../SharedComponents/SearchBar";
 import MovieContext from "../../context/movieContext";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 
 const SearchPage = () => {
- const  { allMovies, addAllMoviesInfo } = useContext(MovieContext);
+ const  { allMovies } = useContext(MovieContext);
   
-
-  useEffect(() => {
-    addAllMoviesInfo([]);
-  }, [])
 
 console.log(allMovies)
   return (
