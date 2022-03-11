@@ -5,13 +5,13 @@ import { useContext, useEffect } from "react";
 
 const SearchPage = () => {
  const  { allMovies, addAllMoviesInfo } = useContext(MovieContext);
-  console.log(allMovies);
+  
 
   useEffect(() => {
     addAllMoviesInfo([]);
   }, [])
 
-
+console.log(allMovies)
   return (
     <section className="search-page">
       <h2>Search</h2>
@@ -19,7 +19,7 @@ const SearchPage = () => {
       <div className="movies-list">
         {
           allMovies.length > 0
-            ? allMovies.map(x => <MovieCard key={x.show.id} movie={x.show} />)
+            ? allMovies.map(x => <MovieCard key={x.show.id} movieInfo={x.show} />)
             : <h4 className='no-movies-found'>No movies found!</h4>
         }
 
