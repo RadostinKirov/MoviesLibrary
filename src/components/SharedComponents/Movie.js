@@ -1,7 +1,10 @@
-import { Link, NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { Link, } from "react-router-dom";
+import MovieContext from "../../context/movieContext";
 
 const Movie = () => {
-
+const {allMovies} = useContext(MovieContext);
+console.log(allMovies)
 
     return (
         <section className="movie">

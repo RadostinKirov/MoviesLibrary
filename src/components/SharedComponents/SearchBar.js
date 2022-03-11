@@ -1,10 +1,11 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { getSearchedResults } from "../service/movie/movie";
-
+import { getSearchedResults } from "../../service/movie";
+import MovieContext from "../../context/movieContext";
+import { useContext } from "react";
 
 
 const SearchBar = () => {
+    const { addAllMoviesInfo } = useContext(MovieContext);
     const navigate = useNavigate();
 
 
@@ -17,6 +18,7 @@ const SearchBar = () => {
         getSearchedResults(searchedInput)
             .then(res => {
                 console.log('results from search bar -> ', res);
+                addAllMoviesInfo(res);
             })
             .catch(err => {
                 console.log('Server errpr -> ', err);

@@ -1,5 +1,3 @@
-
-
 export async function getSearchedResults(data) {
 
     try {
