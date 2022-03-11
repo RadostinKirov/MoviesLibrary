@@ -1,12 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import { getSearchedResults } from "../../service/movie";
 import MovieContext from "../../context/movieContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 
 const SearchBar = () => {
     const { addAllMoviesInfo } = useContext(MovieContext);
     const navigate = useNavigate();
+    const [searchInput, setSearchInput] = useState('')
 
 
     const onSubmitHandler = (e) => {
@@ -18,6 +19,7 @@ const SearchBar = () => {
         getSearchedResults(searchedInput)
             .then(res => {
                 addAllMoviesInfo(res);
+                setSearchInput('');
             })
             .catch(err => {
                 console.log('Server errpr -> ', err);
@@ -25,10 +27,15 @@ const SearchBar = () => {
 
     }
 
+    const onChangeHandler = (e) => {
+        setSearchInput(e.currentTarget.value);
+        
+    }
+
     return (
 
         <form className="search-bar" onSubmit={onSubmitHandler}>
-            <input type="text" name="searchInput" placeholder="movie name...." />
+            <input type="text" value={searchInput} onChange={onChangeHandler} name="searchInput" placeholder="movie name...." />
             <input type="submit" className="search-btn" value="Search" />
         </form>
 
