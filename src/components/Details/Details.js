@@ -1,4 +1,4 @@
-import Movie from "../SharedComponents/Movie";
+import Movie from "../SharedComponents/MovieCard";
 
 const Details = () => {
 

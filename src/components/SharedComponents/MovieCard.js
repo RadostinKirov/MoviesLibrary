@@ -2,13 +2,13 @@
 import { Link, } from "react-router-dom";
 
 
-const Movie = () => {
+const MovieCard = ({ movieInfo }) => {
 
-
+console.log(movieInfo)
     return (
         <section className="movie">
 
-            <Link to="/details" className="img-container">
+            <Link to={`/details/123`} className="img-container">
                 <img src="https://m.media-amazon.com/images/I/516DXKVRKKL.jpg" alt="The Pink Panther" />
             </Link>
             <div className="movie-info">
@@ -31,4 +31,4 @@ const Movie = () => {
     )
 }
 
-export default Movie;
+export default MovieCard;
