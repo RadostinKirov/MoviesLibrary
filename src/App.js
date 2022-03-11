@@ -14,7 +14,6 @@ function App() {
 
   const addAllMoviesInfo = (info) => {
     setAllMovies(info);
-    console.log(info)
   }
 
   return (

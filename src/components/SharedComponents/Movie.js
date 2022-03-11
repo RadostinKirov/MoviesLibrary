@@ -1,10 +1,9 @@
-import { useContext } from "react";
+
 import { Link, } from "react-router-dom";
-import MovieContext from "../../context/movieContext";
+
 
 const Movie = () => {
-const {allMovies} = useContext(MovieContext);
-console.log(allMovies)
+
 
     return (
         <section className="movie">
@@ -23,7 +22,7 @@ console.log(allMovies)
                     pariatur magnam perspiciatis numquam doloribus voluptate, error saepe?</p>
                 <Link to="#" className="official-site">Visit official site</Link>
                 <Link to="" className="add-to-favorites"> Add to Favorites</Link>
-               
+
 
 
             </div>

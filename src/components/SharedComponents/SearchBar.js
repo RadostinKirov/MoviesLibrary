@@ -17,7 +17,6 @@ const SearchBar = () => {
 
         getSearchedResults(searchedInput)
             .then(res => {
-                console.log('results from search bar -> ', res);
                 addAllMoviesInfo(res);
             })
             .catch(err => {
