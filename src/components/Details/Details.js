@@ -1,6 +1,5 @@
 import Movie from "../SharedComponents/Movie";
 
-
 const Details = () => {
 
     return (

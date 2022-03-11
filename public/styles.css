@@ -187,6 +187,7 @@ main .search-page .duration , main .genre {
 main .search-page .genre {
     border-right: 1px solid black;
     padding-right: 8px;
+    margin-right: 8px;
 }
 
 main .search-page .official-site {
@@ -275,6 +276,7 @@ main .details-page .duration , main .genre {
 main .details-page .genre {
     border-right: 1px solid black;
     padding-right: 8px;
+    margin-right: 8px;
 }
 
 main .details-page .official-site {

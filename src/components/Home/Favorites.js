@@ -6,19 +6,19 @@ const Favorites = () => {
         <section className="favorites">
             <h2>Your Favorites</h2>
             <section className="movie-image">
-                <Link to="#">
+                <Link to="/details/1234">
                     <img src="https://m.media-amazon.com/images/I/516DXKVRKKL.jpg" alt="The Pink Panther" />
                 </Link>
             </section>
 
             <section className="movie-image">
-                <Link to="#">
+                <Link to="/details/1234">
                     <img src="https://m.media-amazon.com/images/I/516DXKVRKKL.jpg" alt="The Pink Panther" />
                 </Link>
             </section>
 
             <section className="movie-image">
-                <Link to="#">
+                <Link to="/details/1234">
                     <img src="https://m.media-amazon.com/images/I/516DXKVRKKL.jpg" alt="The Pink Panther" />
                 </Link>
             </section>
