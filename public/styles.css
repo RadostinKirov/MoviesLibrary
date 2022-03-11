@@ -12,6 +12,7 @@ header nav {
     background-color: rgb(248, 249, 250);
 }
 
+
 header .search-bar input{
     border: 1px solid rgb(206, 212, 218);
     border-radius: 5px;
@@ -122,7 +123,9 @@ main .search-page h2{
 
 main .search-page .search-bar {
     text-align: center;
+    position: relative;
 }
+
 
 main .search-page .search-bar input{
     border: 1px solid rgb(206, 212, 218);

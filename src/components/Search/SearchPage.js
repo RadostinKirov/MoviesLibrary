@@ -3,6 +3,7 @@ import SearchBar from "../SharedComponents/SearchBar";
 
 
 const SearchPage = () => {
+  
 
 return (
     <section className="search-page">
