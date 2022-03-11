@@ -2,10 +2,10 @@
 const SearchBar = () => {
 
     return (
-        <div className="search-bar">
+        <form className="search-bar">
             <input type="text" placeholder="Search by movie title..." />
-            <button>Search</button>
-        </div>
+            <input type="button" className="search-btn" value="Search"/>
+        </form>
     )
 
 }

@@ -21,15 +21,15 @@ header .search-bar input{
     margin-right: 5px;
 }
 
-header .search-bar button {
+header .search-bar .search-btn {
     border: 1px solid rgb(51, 166, 76);
     background-color: rgb(248, 249, 250);
     color: rgb(51, 166, 76);
     border-radius: 5px;
-    padding: 10px;
+    width: 75px;
 }
 
-header .search-bar button:hover {
+header .search-bar .search-btn:hover {
     background-color: rgb(51, 166, 76);
     color: white;
     transition: 0.4s;
@@ -133,15 +133,15 @@ main .search-page .search-bar input{
     margin-right: 5px;
 }
 
-main .search-page .search-bar button {
+main .search-page .search-bar .search-btn {
     border: 1px solid rgb(51, 166, 76);
     background-color: rgb(248, 249, 250);
     color: rgb(51, 166, 76);
     border-radius: 5px;
-    padding: 10px;
+    width: 75px;
 }
 
-main .search-page .search-bar button:hover {
+main .search-page .search-bar .search-btn:hover {
     background-color: rgb(51, 166, 76);
     color: white;
     transition: 0.4s;
@@ -211,7 +211,7 @@ main .search-page .add-to-favorites:hover{
     transition: 0.3s;
 }
 
-main .search-page button {
+main .search-page .search-btn {
     margin-top: 15px;
 }
 
