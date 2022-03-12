@@ -18,7 +18,7 @@ const MovieCard = ({ movieInfo }) => {
                     <p className="genre">{movieInfo.genres.join(', ')}</p>
                     <p className="duration">{movieInfo.runtime ? `${movieInfo.runtime} minutes` : ''}</p>
                 </div>
-                <div>
+                <div  className="description">
                     {parse(movieInfo.summary)}
                 </div>
                 <a href={movieInfo.url}>Visit official site</a>

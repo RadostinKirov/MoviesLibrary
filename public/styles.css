@@ -154,6 +154,8 @@ main .search-page .search-bar .search-btn:hover {
 main .search-page .movie {
     display: flex;
     padding: 10px 0;
+    margin: 20px 0;
+    
 }
 
 
@@ -191,6 +193,15 @@ main .search-page .duration {
     border-left: 1px solid black;
     padding-left: 8px;
     margin-left: 8px;
+}
+
+main .search-page .description{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    line-clamp: 3; 
+    -webkit-box-orient: vertical; 
 }
 
 main .search-page .official-site {
