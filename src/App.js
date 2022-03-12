@@ -12,12 +12,15 @@ function App() {
   const [allMovies, setAllMovies] = useState([]);
   const [clickedMovie, setClickedMovie] = useState([]);
   const [favorites, setToFavorites] = useState([]);
+  const [personalInfo, setPersonalInfo] = useState({rating: 0, comment: ''});
 
   const addNewClickedMovie = (info) => {
     setClickedMovie(info);
   }
 
   const addAllMoviesInfo = (info) => {
+    info.map(x => {x.show.userRating=0; x.show.comment=''})
+    console.log('info -> ', info);
     setAllMovies(info);
   }
 
@@ -36,13 +39,20 @@ function App() {
     }
   }
 
+  const addPersonalInfo = (info, type) => {
+    let tempArray = personalInfo;
+    tempArray[type] = info;
+    setPersonalInfo(tempArray);
+  }
+
   return (
     <div className="container">
 
       <MovieContext.Provider value={{
         allMovies, addAllMoviesInfo,
         clickedMovie, addNewClickedMovie,
-        favorites, changeFavorites
+        favorites, changeFavorites,
+        personalInfo, addPersonalInfo
       }}>
         <Header />
         <main>
