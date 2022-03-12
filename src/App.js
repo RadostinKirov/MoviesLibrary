@@ -11,6 +11,7 @@ function App() {
 
   const [allMovies, setAllMovies] = useState([]);
   const [clickedMovie, setClickedMovie] = useState([]);
+  const [favorites, setToFavorites] = useState([]);
 
   const addNewClickedMovie = (info) => {
     setClickedMovie(info);
@@ -20,12 +21,22 @@ function App() {
     setAllMovies(info);
   }
 
+  const changeFavorites = (info, change) => {
+    let tempFavoritesArray = [];
+    tempFavoritesArray = favorites;
+    if(change == 'add'){
+      tempFavoritesArray.push(info);
+      setToFavorites(tempFavoritesArray);
+    }
+  }
+
   return (
     <div className="container">
 
       <MovieContext.Provider value={{
         allMovies, addAllMoviesInfo,
-        clickedMovie, addNewClickedMovie
+        clickedMovie, addNewClickedMovie,
+        favorites, changeFavorites
       }}>
         <Header />
         <main>

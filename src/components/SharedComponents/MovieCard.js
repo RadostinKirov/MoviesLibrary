@@ -1,11 +1,13 @@
 import MovieContext from "../../context/movieContext";
 import { Link, useNavigate } from "react-router-dom";
 import parse from 'html-react-parser';
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 const MovieCard = ({ movieInfo }) => {
-    const { addNewClickedMovie } = useContext(MovieContext);
+    const { addNewClickedMovie, changeFavorites } = useContext(MovieContext);
     const navigate = useNavigate();
+    const [inFavorites, setInFavorites] = useState('false');
+
     console.log('test')
     console.log(movieInfo);
 
@@ -13,6 +15,19 @@ const MovieCard = ({ movieInfo }) => {
         e.preventDefault();
         addNewClickedMovie(movieInfo);
         navigate(`/details/${movieInfo.id}`)
+    }
+
+    const onClickFavoritesHandler = (e) => {
+        e.preventDefault();
+       console.log('favorites clicked');
+
+       if(inFavorites){
+           setInFavorites(true);
+           changeFavorites(movieInfo, 'add');
+       }else {
+           setInFavorites(false);
+           changeFavorites(movieInfo, 'remove');
+       }
     }
 
 
@@ -33,7 +48,7 @@ const MovieCard = ({ movieInfo }) => {
                 </div>
                 <a href={movieInfo.url}>Visit official site</a>
 
-                <Link to="" className="add-to-favorites"> Add to Favorites</Link>
+                <Link to="" onClick={onClickFavoritesHandler} className="add-to-favorites"> Add to Favorites</Link>
 
 
 
