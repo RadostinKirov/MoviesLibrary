@@ -1,15 +1,30 @@
 import MovieContext from "../../context/movieContext";
 import { Link, useNavigate } from "react-router-dom";
 import parse from 'html-react-parser';
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 const MovieCard = ({ movieInfo }) => {
     const { addNewClickedMovie, changeFavorites, favorites } = useContext(MovieContext);
     const navigate = useNavigate();
-    const [inFavorites, setInFavorites] = useState('false');
+    const [inFavorites, setInFavorites] = useState(false);
 
     console.log('test')
     console.log(movieInfo);
+
+    useEffect(() => {
+
+        const currentFavorites = favorites.map(x => x.id);
+        if (!currentFavorites.includes(movieInfo.id)) {
+
+            setInFavorites(false);
+        } else {
+
+            setInFavorites(true);
+        }
+
+    }, [])
+
+
 
     const onDetailsClickHandler = (e) => {
         e.preventDefault();
@@ -25,13 +40,19 @@ const MovieCard = ({ movieInfo }) => {
             changeFavorites(movieInfo, 'add');
             setInFavorites(true);
         } else {
-            changeFavorites(movieInfo, 'remove');
+            const index = currentFavorites.indexOf(movieInfo.id);
+            changeFavorites(index, 'remove');
             setInFavorites(false);
-
         }
-
     }
 
+    const inFavoritesCheck = () => {
+        if (inFavorites) {
+            return 'remove-from-favorites';
+        } else {
+            return 'add-to-favorites';
+        }
+    }
 
     return (
         <section className="movie">
@@ -50,7 +71,7 @@ const MovieCard = ({ movieInfo }) => {
                 </div>
                 <a href={movieInfo.url}>Visit official site</a>
 
-                <Link to="" onClick={onClickFavoritesHandler} className="add-to-favorites"> Add to Favorites</Link>
+                <Link to="" onClick={onClickFavoritesHandler} className={inFavoritesCheck()} > Add to Favorites</Link>
 
 
 

@@ -30,6 +30,7 @@ function App() {
       setToFavorites(tempFavoritesArray);
     }else {
       const index = info;
+      console.log('index for splice -> ', index)
       tempFavoritesArray.splice(index, 1);
       setToFavorites(tempFavoritesArray);
     }
