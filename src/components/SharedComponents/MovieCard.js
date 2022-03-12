@@ -4,7 +4,7 @@ import parse from 'html-react-parser';
 import { useContext, useState } from "react";
 
 const MovieCard = ({ movieInfo }) => {
-    const { addNewClickedMovie, changeFavorites } = useContext(MovieContext);
+    const { addNewClickedMovie, changeFavorites, favorites } = useContext(MovieContext);
     const navigate = useNavigate();
     const [inFavorites, setInFavorites] = useState('false');
 
@@ -19,15 +19,17 @@ const MovieCard = ({ movieInfo }) => {
 
     const onClickFavoritesHandler = (e) => {
         e.preventDefault();
-       console.log('favorites clicked');
+        console.log('favorites clicked');
+        const currentFavorites = favorites.map(x => x.id);
+        if (!currentFavorites.includes(movieInfo.id)) {
+            changeFavorites(movieInfo, 'add');
+            setInFavorites(true);
+        } else {
+            changeFavorites(movieInfo, 'remove');
+            setInFavorites(false);
 
-       if(inFavorites){
-           setInFavorites(true);
-           changeFavorites(movieInfo, 'add');
-       }else {
-           setInFavorites(false);
-           changeFavorites(movieInfo, 'remove');
-       }
+        }
+
     }
 
 

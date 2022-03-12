@@ -24,8 +24,13 @@ function App() {
   const changeFavorites = (info, change) => {
     let tempFavoritesArray = [];
     tempFavoritesArray = favorites;
-    if(change == 'add'){
+
+    if (change == 'add') {
       tempFavoritesArray.push(info);
+      setToFavorites(tempFavoritesArray);
+    }else {
+      const index = info;
+      tempFavoritesArray.splice(index, 1);
       setToFavorites(tempFavoritesArray);
     }
   }

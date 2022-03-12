@@ -7,8 +7,8 @@ const MoviePoster = ({ movieInfo }) => {
     const { addNewClickedMovie } = useContext(MovieContext);
     const navigate = useNavigate();
 
-    console.log('inMoviePoster');
-    console.log("MovieInfo in Poster -> ", movieInfo);
+ //   console.log('inMoviePoster');
+ //   console.log("MovieInfo in Poster -> ", movieInfo);
 
 
     const onDetailsClickHandler = (e) => {
