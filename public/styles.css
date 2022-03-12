@@ -1,3 +1,4 @@
+
 html {
     box-sizing: border-box;
     font-family: sans-serif;
@@ -161,6 +162,9 @@ main .search-page .movie {
 
 main .search-page .img-container {
     width: 220px;
+    /* height: 300px; */
+    display: flex;
+    align-items: center;
 }
 
 main .search-page .img-container img {
@@ -216,6 +220,7 @@ main .search-page .add-to-favorites {
     padding: 10px 41px;
     font-size: 18px;
     border-radius: 7px;
+    margin-top: 15px;
 }
 
 main .search-page .add-to-favorites:hover{
@@ -237,6 +242,7 @@ main .search-page .remove-from-favorites {
     padding: 10px 41px;
     font-size: 18px;
     border-radius: 7px;
+    margin-top: 15px;
 }
 
 main .search-page .remove-from-favorites:hover {
@@ -259,6 +265,9 @@ main .details-page .movie {
 
 main .details-page .img-container {
     width: 220px;
+    /* height: 300px; */
+    display: flex;
+    align-items: center;
 }
 
 main .details-page .img-container img {
@@ -305,6 +314,7 @@ main .details-page .add-to-favorites {
     padding: 10px 41px;
     font-size: 18px;
     border-radius: 7px;
+    margin-top: 15px;
 }
 
 main .details-page .add-to-favorites:hover{
@@ -322,6 +332,7 @@ main .details-page .remove-from-favorites {
     padding: 10px 41px;
     font-size: 18px;
     border-radius: 7px;
+    margin-top: 15px
 }
 
 main .details-page .remove-from-favorites:hover {
