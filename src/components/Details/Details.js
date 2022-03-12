@@ -1,10 +1,15 @@
-import Movie from "../SharedComponents/MovieCard";
+import MovieCard from "../SharedComponents/MovieCard";
+import MovieContext from "../../context/movieContext";
+import { useContext } from "react";
 
 const Details = () => {
+    const { clickedMovie: movieInfo } = useContext(MovieContext);
 
+    console.log('details entered');
+    console.log('movieInfo -> ', movieInfo)
     return (
         <section className="details-page">
-            <Movie />
+            <MovieCard movieInfo={movieInfo} />
 
             <h2>Your Review</h2>
             <div className="rating-stars"></div>

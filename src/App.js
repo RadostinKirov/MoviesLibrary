@@ -10,7 +10,11 @@ import { useState } from 'react';
 function App() {
 
   const [allMovies, setAllMovies] = useState([]);
+  const [clickedMovie, setClickedMovie] = useState([]);
 
+  const addNewClickedMovie = (info) => {
+    setClickedMovie(info);
+  }
 
   const addAllMoviesInfo = (info) => {
     setAllMovies(info);
@@ -20,14 +24,15 @@ function App() {
     <div className="container">
 
       <MovieContext.Provider value={{
-        allMovies, addAllMoviesInfo
+        allMovies, addAllMoviesInfo,
+        clickedMovie, addNewClickedMovie
       }}>
         <Header />
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="search" element={<SearchPage />} />
-            <Route path="details/:123" element={<Details />} />
+            <Route path="details/:id" element={<Details />} />
           </Routes>
         </main>
       </MovieContext.Provider>
