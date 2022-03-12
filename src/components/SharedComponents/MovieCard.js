@@ -1,8 +1,9 @@
 
 import { Link } from "react-router-dom";
-
+import parse from 'html-react-parser';
 
 const MovieCard = ({ movieInfo }) => {
+    
 
     console.log(movieInfo)
     return (
@@ -17,7 +18,9 @@ const MovieCard = ({ movieInfo }) => {
                     <p className="genre">{movieInfo.genres.join(', ')}</p>
                     <p className="duration">{movieInfo.runtime ? `${movieInfo.runtime} minutes` : ''}</p>
                 </div>
-                {movieInfo.summary}
+                <div>
+                    {parse(movieInfo.summary)}
+                </div>
                 <a href={movieInfo.url}>Visit official site</a>
 
                 <Link to="" className="add-to-favorites"> Add to Favorites</Link>
