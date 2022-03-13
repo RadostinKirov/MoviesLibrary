@@ -12,9 +12,14 @@ const SearchBar = () => {
     const onSubmitHandler = (e) => {
         e.preventDefault();
         navigate('/search');
+        
         let data = new FormData(e.currentTarget);
         let searchedInput = data.get('searchInput');
-
+       
+        if(!searchedInput){
+            return
+        }
+    
         getSearchedResults(searchedInput)
             .then(res => {
                 if (res.length === 0) {
