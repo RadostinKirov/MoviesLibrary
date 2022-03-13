@@ -2,6 +2,8 @@ import MovieCard from "../SharedComponents/MovieCard";
 import SearchBar from "../SharedComponents/SearchBar";
 import MovieContext from "../../context/movieContext";
 import { useContext, useEffect } from "react";
+import "./SearchPage.css";
+
 
 const SearchPage = () => {
   const { allMovies, error, setErrorState } = useContext(MovieContext);
@@ -27,10 +29,12 @@ const SearchPage = () => {
 
   return (
     <section className="search-page">
-      <h2>Search</h2>
+      <div className="title">
+        <h2>Search</h2>
+        {error ? <p className="error">Connection / Server error</p> : ""}
+      </div>
       <SearchBar />
       <div className="movies-list">
-        {error ? <p>Errordadasdasdasdasdasasdasdasdasd</p> : ""}
         {mainRender()}
       </div>
     </section>

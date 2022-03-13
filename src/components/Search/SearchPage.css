@@ -1,0 +1,19 @@
+.title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.search-page h4 {
+    text-align: center;
+    font-size: 27px;
+}
+
+.search-page .error {
+    position: absolute;
+    padding: 10px 30px;
+    border: 1px solid red;
+    border-radius: 10px;
+    top: 130px;
+}
