@@ -13,8 +13,8 @@ function App() {
   const [favorites, setToFavorites] = useState([]);
 
   const addAllMoviesInfo = (info) => {
-    info.map(x => { x.show.userRating = 0; x.show.comment = '' })
-    setAllMovies(info);
+
+    setAllMovies(info)
   }
 
   const changeFavorites = (info, change) => {
@@ -34,7 +34,7 @@ function App() {
     }
   }
 
- 
+
 
 
   return (
@@ -46,7 +46,6 @@ function App() {
       }}>
         <Header />
         <main>
-      
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="search" element={<SearchPage />} />

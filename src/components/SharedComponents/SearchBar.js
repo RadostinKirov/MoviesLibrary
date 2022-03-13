@@ -9,7 +9,6 @@ const SearchBar = () => {
     const navigate = useNavigate();
     const [searchInput, setSearchInput] = useState('')
 
-
     const onSubmitHandler = (e) => {
         e.preventDefault();
         navigate('/search');
@@ -18,8 +17,13 @@ const SearchBar = () => {
 
         getSearchedResults(searchedInput)
             .then(res => {
-                addAllMoviesInfo(res);
+                if (res.length == 0) {
+                    addAllMoviesInfo(['empty']);
+                } else {
+                    addAllMoviesInfo(res);
+                }
                 setSearchInput('');
+                console.log(res);
             })
             .catch(err => {
                 console.log('Server errpr -> ', err);
@@ -29,7 +33,7 @@ const SearchBar = () => {
 
     const onChangeHandler = (e) => {
         setSearchInput(e.currentTarget.value);
-        
+
     }
 
     return (

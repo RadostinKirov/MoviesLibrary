@@ -1,6 +1,7 @@
 import SearchBar from "../SharedComponents/SearchBar";
 import { Link } from "react-router-dom";
 
+
 const Header = () => {
 
     return (
