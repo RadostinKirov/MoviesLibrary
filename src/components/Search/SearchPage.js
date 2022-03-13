@@ -1,7 +1,7 @@
 import MovieCard from "../SharedComponents/MovieCard";
 import SearchBar from "../SharedComponents/SearchBar";
 import MovieContext from "../../context/movieContext";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 
 const SearchPage = () => {
   const { allMovies } = useContext(MovieContext);
@@ -10,7 +10,7 @@ const SearchPage = () => {
 
     if (allMovies.length === 0) {
       return '';
-    } else if (allMovies[0] == 'empty') {
+    } else if (allMovies[0] === 'empty') {
       return <h4 className='no-movies-found'>No movies found!</h4>;
     } else {
       return allMovies.map(x => <MovieCard key={x.show.id} movieInfo={x.show} />);

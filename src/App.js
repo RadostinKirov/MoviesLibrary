@@ -8,7 +8,6 @@ import { useState } from 'react';
 
 
 function App() {
-
   const [allMovies, setAllMovies] = useState([]);
   const [favorites, setToFavorites] = useState([]);
 
@@ -21,7 +20,7 @@ function App() {
     let tempFavoritesArray = [];
     tempFavoritesArray = favorites;
 
-    if (change == 'add') {
+    if (change === 'add') {
       tempFavoritesArray.push(info);
       setToFavorites(tempFavoritesArray);
 

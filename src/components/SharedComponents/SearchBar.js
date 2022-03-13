@@ -17,7 +17,7 @@ const SearchBar = () => {
 
         getSearchedResults(searchedInput)
             .then(res => {
-                if (res.length == 0) {
+                if (res.length === 0) {
                     addAllMoviesInfo(['empty']);
                 } else {
                     addAllMoviesInfo(res);
