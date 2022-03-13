@@ -1,0 +1,11 @@
+.review span {
+    font-size: 35px !important ;
+}
+
+.review h2 {
+    margin-bottom: 0;
+}
+
+.review textarea {
+    margin-top: 10px;
+}

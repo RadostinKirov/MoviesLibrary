@@ -46,6 +46,7 @@ function App() {
       }}>
         <Header />
         <main>
+      
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="search" element={<SearchPage />} />
