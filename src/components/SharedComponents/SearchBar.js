@@ -5,7 +5,7 @@ import { useContext, useState } from "react";
 
 
 const SearchBar = () => {
-    const { addAllMoviesInfo } = useContext(MovieContext);
+    const { addAllMoviesInfo, setErrorState } = useContext(MovieContext);
     const navigate = useNavigate();
     const [searchInput, setSearchInput] = useState('')
 
@@ -26,6 +26,7 @@ const SearchBar = () => {
                 console.log(res);
             })
             .catch(err => {
+                setErrorState(true);
                 console.log('Server errpr -> ', err);
             })
 

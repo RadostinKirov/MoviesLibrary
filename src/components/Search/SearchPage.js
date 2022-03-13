@@ -1,10 +1,16 @@
 import MovieCard from "../SharedComponents/MovieCard";
 import SearchBar from "../SharedComponents/SearchBar";
 import MovieContext from "../../context/movieContext";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 const SearchPage = () => {
-  const { allMovies } = useContext(MovieContext);
+  const { allMovies, error, setErrorState } = useContext(MovieContext);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setErrorState(false);
+    }, 5000);
+  }, [error])
 
   const mainRender = () => {
 
@@ -24,6 +30,7 @@ const SearchPage = () => {
       <h2>Search</h2>
       <SearchBar />
       <div className="movies-list">
+        {error ? <p>Errordadasdasdasdasdasasdasdasdasd</p> : ""}
         {mainRender()}
       </div>
     </section>

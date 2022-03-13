@@ -1,3 +1,4 @@
+
 export async function getSearchedResults(data) {
 
     try {
@@ -11,7 +12,7 @@ export async function getSearchedResults(data) {
 }
 
 export async function getMovieById(id) {
-console.log('service entered')
+    console.log('service entered')
     try {
         let response = await fetch(`https://api.tvmaze.com/shows/${id}`);
         let resultsData = await response.json();

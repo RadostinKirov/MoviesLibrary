@@ -10,6 +10,7 @@ import { useState } from 'react';
 function App() {
   const [allMovies, setAllMovies] = useState([]);
   const [favorites, setToFavorites] = useState([]);
+  const [error, setEror] = useState(false);
 
   const addAllMoviesInfo = (info) => {
 
@@ -33,7 +34,9 @@ function App() {
     }
   }
 
-
+  const setErrorState = (state) => {
+    setEror(state)
+  }
 
 
   return (
@@ -42,6 +45,7 @@ function App() {
       <MovieContext.Provider value={{
         allMovies, addAllMoviesInfo,
         favorites, changeFavorites,
+        error, setErrorState
       }}>
         <Header />
         <main>
