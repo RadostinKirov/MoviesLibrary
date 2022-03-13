@@ -4,16 +4,16 @@ import parse from 'html-react-parser';
 import { useContext, useEffect, useState } from "react";
 
 const MovieCard = ({ movieInfo }) => {
-    const { addNewClickedMovie, changeFavorites, favorites } = useContext(MovieContext);
+    const { changeFavorites, favorites } = useContext(MovieContext);
     const navigate = useNavigate();
     const [inFavorites, setInFavorites] = useState(false);
 
-    console.log('test')
-    console.log(movieInfo);
+
 
     useEffect(() => {
 
         const currentFavorites = favorites.map(x => x.id);
+      
         if (!currentFavorites.includes(movieInfo.id)) {
 
             setInFavorites(false);
@@ -28,17 +28,19 @@ const MovieCard = ({ movieInfo }) => {
 
     const onDetailsClickHandler = (e) => {
         e.preventDefault();
-        addNewClickedMovie(movieInfo);
+        // addNewClickedMovie(movieInfo);
         navigate(`/details/${movieInfo.id}`)
     }
 
     const onClickFavoritesHandler = (e) => {
         e.preventDefault();
-        console.log('favorites clicked');
+     
         const currentFavorites = favorites.map(x => x.id);
         if (!currentFavorites.includes(movieInfo.id)) {
             changeFavorites(movieInfo, 'add');
             setInFavorites(true);
+            
+
         } else {
             const index = currentFavorites.indexOf(movieInfo.id);
             changeFavorites(index, 'remove');
@@ -71,7 +73,7 @@ const MovieCard = ({ movieInfo }) => {
                 </div>
                 <a href={movieInfo.url}>Visit official site</a>
 
-                <Link to="" onClick={onClickFavoritesHandler} className={inFavoritesCheck()} > Add to Favorites</Link>
+                <Link to="" onClick={onClickFavoritesHandler} className={inFavoritesCheck()} >{inFavorites? "Remove from favorites": "Add to Favorites"} </Link>
 
 
 

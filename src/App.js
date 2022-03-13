@@ -10,17 +10,10 @@ import { useState } from 'react';
 function App() {
 
   const [allMovies, setAllMovies] = useState([]);
-  const [clickedMovie, setClickedMovie] = useState([]);
   const [favorites, setToFavorites] = useState([]);
-  const [personalInfo, setPersonalInfo] = useState({rating: 0, comment: ''});
-
-  const addNewClickedMovie = (info) => {
-    setClickedMovie(info);
-  }
 
   const addAllMoviesInfo = (info) => {
-    info.map(x => {x.show.userRating=0; x.show.comment=''})
-    console.log('info -> ', info);
+    info.map(x => { x.show.userRating = 0; x.show.comment = '' })
     setAllMovies(info);
   }
 
@@ -31,7 +24,9 @@ function App() {
     if (change == 'add') {
       tempFavoritesArray.push(info);
       setToFavorites(tempFavoritesArray);
-    }else {
+
+      console.log(favorites)
+    } else {
       const index = info;
       console.log('index for splice -> ', index)
       tempFavoritesArray.splice(index, 1);
@@ -39,20 +34,15 @@ function App() {
     }
   }
 
-  const addPersonalInfo = (info, type) => {
-    let tempArray = personalInfo;
-    tempArray[type] = info;
-    setPersonalInfo(tempArray);
-  }
+ 
+
 
   return (
     <div className="container">
 
       <MovieContext.Provider value={{
         allMovies, addAllMoviesInfo,
-        clickedMovie, addNewClickedMovie,
         favorites, changeFavorites,
-        personalInfo, addPersonalInfo
       }}>
         <Header />
         <main>

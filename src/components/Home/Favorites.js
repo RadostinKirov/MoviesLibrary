@@ -5,7 +5,7 @@ import MoviePoster from "./MoviePoster";
 
 const Favorites = () => {
 const {favorites} = useContext(MovieContext);
-console.log("favorites in favorites -> ", favorites)
+
     return (
         <section className="favorites">
             <h2>Your Favorites</h2>

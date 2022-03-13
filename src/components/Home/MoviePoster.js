@@ -1,19 +1,18 @@
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import MovieContext from "../../context/movieContext";
+import { getMovieById } from "../../service/movie";
 
 
 const MoviePoster = ({ movieInfo }) => {
     const { addNewClickedMovie } = useContext(MovieContext);
     const navigate = useNavigate();
 
- //   console.log('inMoviePoster');
- //   console.log("MovieInfo in Poster -> ", movieInfo);
-
 
     const onDetailsClickHandler = (e) => {
         e.preventDefault();
-        addNewClickedMovie(movieInfo);
+      //  addNewClickedMovie(movieInfo);
+      
         navigate(`/details/${movieInfo.id}`)
     }
 

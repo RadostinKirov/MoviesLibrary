@@ -7,7 +7,6 @@ const SearchPage = () => {
  const  { allMovies } = useContext(MovieContext);
   
 
-console.log(allMovies)
   return (
     <section className="search-page">
       <h2>Search</h2>

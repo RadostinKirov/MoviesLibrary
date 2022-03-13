@@ -9,3 +9,15 @@ export async function getSearchedResults(data) {
         throw err;
     }
 }
+
+export async function getMovieById(id) {
+console.log('service entered')
+    try {
+        let response = await fetch(`https://api.tvmaze.com/shows/${id}`);
+        let resultsData = await response.json();
+        return resultsData;
+    }
+    catch (err) {
+        throw err;
+    }
+}
