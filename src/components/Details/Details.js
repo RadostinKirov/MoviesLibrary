@@ -1,11 +1,12 @@
 import MovieCard from "../SharedComponents/MovieCard";
 import { useEffect, useState } from "react";
-import { getMovieById } from "../../service/movie";
+import { getMovieById, getRatingById } from "../../service/movie";
 import { useParams } from "react-router";
 import Review from "./Review";
 
 const Details = () => {
     const [movieInfo, setMovieInfo] = useState({});
+    const [movieRating, setMovieRating] = useState(undefined);
     const { id: movieId } = useParams();
 
     useEffect(() => {
@@ -16,7 +17,21 @@ const Details = () => {
             .catch(err => {
                 console.log(err);
             })
-    }, []);
+
+        getRatingById(movieId)
+            .then(res => {
+                if (res == 0) {
+                    console.log('Movie was not rated up to now');
+                } else {
+                    console.log("Movie was already rated -> ", res);
+                    setMovieRating(res);
+                }
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
+        , []);
 
 
     return (
