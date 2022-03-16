@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Review.css";
 import { useParams } from "react-router";
 import ReactStars from "react-rating-stars-component";
@@ -11,6 +11,9 @@ const Review = () => {
     const { id: movieId } = useParams();
     const [inputComment, setInputComment] = useState('');
 
+    let timeout = null;
+
+
     const ratingChanged = (newRating) => {
         console.log(movieId, newRating);
         addRating({ id: movieId, rating: newRating })
@@ -19,10 +22,21 @@ const Review = () => {
             ).catch(err => console.log(err))
     };
 
+
+    const addComment = (inputComment) => {
+        console.log('fetch request to add the comment!')
+    }
+
     const onCommentChange = (e) => {
         setInputComment(e.currentTarget.value);
     }
 
+    useEffect(() => {
+        const delayFn = setTimeout(() => {
+            addComment(inputComment);
+        }, 1000);
+        return () => clearTimeout(delayFn);
+    }, [inputComment])
 
     return (
 
