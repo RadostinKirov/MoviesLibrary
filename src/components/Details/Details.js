@@ -1,6 +1,6 @@
 import MovieCard from "../SharedComponents/MovieCard";
 import { useEffect, useState } from "react";
-import { getMovieById, getRatingById } from "../../service/movie";
+import { getMovieById, getReviewById } from "../../service/movie";
 import { useParams } from "react-router";
 import Review from "./Review";
 
@@ -18,7 +18,7 @@ const Details = () => {
                 console.log(err);
             })
 
-        getRatingById(movieId)
+        getReviewById(movieId)
             .then(res => {
                 if (res == 0) {
                     console.log('Movie was not rated up to now');

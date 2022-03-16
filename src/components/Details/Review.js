@@ -24,16 +24,15 @@ const Review = () => {
         setInputComment(e.currentTarget.value);
     }
 
-    // useEffect(() => {
-    //     const delayFn = setTimeout(() => {
+    useEffect(() => {
+        const delayFn = setTimeout(() => {
+            if (inputComment.length) {
+                addComment({ _id: movieId, comment: inputComment })
+            }
 
-    //         addComment({id: movieId, comment:inputComment})
-
-    //         console.log('send comment')
-
-    //     }, 1000);
-    //     return () => clearTimeout(delayFn);
-    // }, [inputComment])
+        }, 1000);
+        return () => clearTimeout(delayFn);
+    }, [inputComment])
 
     return (
 

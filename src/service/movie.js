@@ -26,6 +26,8 @@ export async function getMovieById(id) {
 export async function addRating(body) {
 
     try {
+    console.log('rating body -> ', body);
+
         const resData = await fetch('http://localhost:3030/rating', {
             method: 'POST',
             headers: {
@@ -48,11 +50,12 @@ export async function addRating(body) {
     }
 }
 
-export async function getRatingById(id){
+export async function getReviewById(id){
     try {      
         console.log('in service', id)    
-        let response = await fetch(`http://localhost:3030/ratingById/${id}`);
+        let response = await fetch(`http://localhost:3030/reviewById/${id}`);
         let resultsData = await response.json();
+        console.log(resultsData)
         return resultsData;
     }
     catch (err) {
@@ -61,6 +64,7 @@ export async function getRatingById(id){
 }
 
 export async function addComment(body){
+    console.log('comment body -> ', body);
     try {
         const resData = await fetch('http://localhost:3030/comment', {
             method: 'POST',
