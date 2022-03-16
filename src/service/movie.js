@@ -62,7 +62,7 @@ export async function getRatingById(id){
 
 export async function addComment(body){
     try {
-        const resData = await fetch('http://localhost:3030/comments', {
+        const resData = await fetch('http://localhost:3030/comment', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

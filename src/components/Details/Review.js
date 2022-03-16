@@ -11,10 +11,10 @@ const Review = () => {
     const { id: movieId } = useParams();
     const [inputComment, setInputComment] = useState('');
 
-    
+
     const ratingChanged = (newRating) => {
         console.log(movieId, newRating);
-        addRating({ id: movieId, rating: newRating })
+        addRating({ _id: movieId, rating: newRating })
             .then((res) =>
                 console.log('rating set -> ', res)
             ).catch(err => console.log(err))
@@ -24,16 +24,16 @@ const Review = () => {
         setInputComment(e.currentTarget.value);
     }
 
-    useEffect(() => {
-        const delayFn = setTimeout(() => {
-            addComment({ id: movieId, comment: inputComment })
-            .then((res) =>
-                console.log('comment set -> ', res)
-            ).catch(err => console.log(err))
-           
-        }, 1000);
-        return () => clearTimeout(delayFn);
-    }, [inputComment])
+    // useEffect(() => {
+    //     const delayFn = setTimeout(() => {
+
+    //         addComment({id: movieId, comment:inputComment})
+
+    //         console.log('send comment')
+
+    //     }, 1000);
+    //     return () => clearTimeout(delayFn);
+    // }, [inputComment])
 
     return (
 
