@@ -34,6 +34,6 @@ The app runs on http://localhost:3000/
     - For sharing data between the components a Context is used
     - Communication with the server goes through a service located in the service folder
     
-    //Still TODO 
+    #####Still TODO 
     //   - Fix the error handling when server error during search
     //   - Display the loaded information for Rating and Comment during Details load
