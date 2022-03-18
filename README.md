@@ -4,6 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 The app runs on http://localhost:3000/
 
 ## Views
+  ### NavBar
     - Search section
     - My Movie collection btn redirecting to Home page
 
